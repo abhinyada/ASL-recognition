@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import cv2
 
-model = YOLO(r"F:\Vs code\runs\detect\runs\train\asl_custom\weights\best.pt")
+model = YOLO(r"F:\ASL detetor\runs\detect\runs\train\asl_custom\weights\best.pt")
 
 cap = cv2.VideoCapture(0)
 
