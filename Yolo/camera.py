@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import cv2
 import mediapipe as mp
 
-model = YOLO(r"C:\ASL detetor\runs\detect\runs\train\asl_custom\weights\best.pt")
+model = YOLO(r"C:\ASL recognition\runs\detect\runs\train\asl_custom\weights\best.pt")
 
 mp_hands = mp.solutions.hands
 mp_draw = mp.solutions.drawing_utils
@@ -13,7 +13,7 @@ hands = mp_hands.Hands(
     min_tracking_confidence=0.5,
 )
 
-PAD = 0.25  
+PAD = 0.5
 
 cap = cv2.VideoCapture(0)
 
@@ -22,7 +22,7 @@ while True:
     if not ret:
         break
 
-    frame = cv2.flip(frame, 1)
+    
     display = frame.copy()          
     h, w = frame.shape[:2]
 
